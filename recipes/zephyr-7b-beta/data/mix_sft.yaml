@@ -1,0 +1,3 @@
+dataset_mixer:
+  HuggingFaceH4/ultrachat_200k: 1.0
+  PKU-Alignment/PKU-SafeRLHF: 0.2

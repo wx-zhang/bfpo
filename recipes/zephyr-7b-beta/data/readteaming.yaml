@@ -1,0 +1,5 @@
+dataset_mixer:
+  data/zephyr-7b-beta_beaver_redteaming.json: 1.0
+dataset_splits:
+- train
+- test

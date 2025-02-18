@@ -26,3 +26,17 @@ This repo contains the implementation for the BFPO framework, as well as the cod
 
 
 ## 🚀 Getting started
+To run the code in this project, first, create a Python virtual environment using e.g. Conda:
+
+```shell
+conda create -n bfpo python=3.10 && conda activate bfpo
+```
+Next, install PyTorch `v2.1.2`. We direct you to the [PyTorch Installation Page](https://pytorch.org/get-started/locally/).
+
+You can then install the remaining package dependencies as follows:
+
+```shell
+git clone https://github.com/wx-zhang/bfpo.git
+cd ./bfpo
+python -m pip install .
+```
