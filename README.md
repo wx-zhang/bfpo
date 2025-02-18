@@ -40,3 +40,37 @@ git clone https://github.com/wx-zhang/bfpo.git
 cd ./bfpo
 python -m pip install .
 ```
+
+
+## 📊 Reproduce Results
+
+To reproduce the alignment results, use the following command:
+
+```shell
+bash bfpo.sh
+```
+
+To reproduce the red teaming results, use the following command:
+
+```shell
+bash redteaming.sh
+```
+
+
+## 🙏 Acknowledgments
+These open source projects played a pivotal role in our research:
+- Our codebase is built upon  [alignment-handbook](https://github.com/huggingface/alignment-handbook). 
+- The buffered trainer is based on [trl](https://github.com/huggingface/trl)
+- The evaluation code is adapted from [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness).  
+
+
+## Citation
+```
+@inproceedings{
+zhang2025bifactorial,
+title={Bi-Factorial Preference Optimization: Balancing Safety-Helpfulness in Language Models},
+author={Wenxuan Zhang and Philip Torr and Mohamed Elhoseiny and Adel Bibi},
+booktitle={The Thirteenth International Conference on Learning Representations},
+year={2025},
+}
+```
