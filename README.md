@@ -7,7 +7,8 @@ Authors: [Wenxuan Zhang](https://wx-zhang.github.io), [Philip Torr](https://www.
 
 [![Paper](https://img.shields.io/badge/Paper-red?logo=arxiv&logoWidth=15)](https://arxiv.org/abs/2408.15313)
 [![Jupyter Quickstart](https://img.shields.io/badge/Quickstart-orange?logo=google-colab&logoWidth=15)](#🚀-Quick-Start)
-[![Checkpoints](https://img.shields.io/badge/🤗%20Checkpoints-grey?logoColor=white&logoWidth=20)](https://3dcompat-dataset.org/doc/dl-dataset.html)
+[![Checkpoints](https://img.shields.io/badge/🤗%20Checkpoints-grey?logoColor=white&logoWidth=20)](https://huggingface.co/Vision-CAIR/BFPO-Zephyr-7b-beta)
+[![Checkpoints1](https://img.shields.io/badge/🤗%20Checkpoints(Redteaming)-grey?logoColor=white&logoWidth=20)](https://huggingface.co/Vision-CAIR/BFPO-Zephyr-7b-beta)
 
 <p align="center">
   <img src="assets/bfpo.gif" width="50%">
