@@ -1,0 +1,3 @@
+model: gooseai
+model_name: davinci 
+model_args: "engine=${model_name} apply_chat_template=True"

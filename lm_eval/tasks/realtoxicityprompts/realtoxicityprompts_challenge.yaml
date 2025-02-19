@@ -1,0 +1,3 @@
+include: realtoxicityprompts.yaml
+task: realtoxicityprompts_challenge
+process_docs: !function utils.process_docs

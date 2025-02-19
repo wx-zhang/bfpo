@@ -1,0 +1,24 @@
+task: hhh_alignment
+dataset_path: HuggingFaceH4/hhh_alignment
+training_split: 'harmless'
+test_split: 'harmless'
+doc_to_text: "{{input}}. "
+doc_to_target: "{{input}}."
+metric_list:
+  # - metric: !function metric.toxicity_perspective_api
+  #   aggregation: mean
+  #   higher_is_better: false
+  # - metric: !function metric.query_gpt4
+  #   aggregation: mean
+  #   higher_is_better: true
+  #   model: gpt-4
+  - metric: !function metric.llama2
+    aggregation: mean
+    higher_is_better: true
+generation_kwargs:
+  do_sample: True
+  temperature: 0.7
+  top_p: 0.95
+  until:
+metadata:
+  version: 0.0

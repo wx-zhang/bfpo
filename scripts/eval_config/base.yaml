@@ -1,0 +1,45 @@
+# disable hydra outputs
+hydra:
+  output_subdir: null
+  run:
+    dir: ./hydra_logs
+
+defaults:
+  - _self_
+  - model@_here_: causal
+
+
+
+# seed
+seed: [0,1234,1234] # default seed (1234) for the HF harness evaluation
+
+
+# task
+tasks: truthfulqa_gen # suggest to perform one task a time for better 
+num_fewshot: 0
+limit:  # Limit the number of examples per task. 
+data_sampling: 
+check_integrity: 
+provide_description: False
+include_path: ./data/eval/
+
+
+# running config
+device: cuda:0
+batch_size: 32
+max_batch_size: 1024 # Maximal batch size to try with --batch_size autos
+cache_requests:
+
+gen_kwargs:
+
+# log
+output_base_path: ./
+output_path: results/${model_name}_${tasks}
+use_cache: 
+predict_only: False
+description_dict_path:
+write_out: False
+verbosity: INFO
+show_config: False
+log_samples: True
+trust_remote_code: True
