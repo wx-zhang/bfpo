@@ -1,8 +1,6 @@
 # Bi-Factorial Preference Optimization: Balancing Safety-Helpfulness in Language Models
 
 
-
-**Bi-Factorial Preference Optimization: Balancing Safety-Helpfulness in Language Models**
 Authors: [Wenxuan Zhang](https://wx-zhang.github.io), [Philip Torr](https://www.robots.ox.ac.uk/~phst/), [Mohamed Elhoseiny*](https://www.mohamed-elhoseiny.com/), [Adel Bibi*](www.adelbibi.com/) (* Equal Advising)
 
 [![Paper](https://img.shields.io/badge/Paper-red?logo=arxiv&logoWidth=15)](https://arxiv.org/abs/2408.15313)
@@ -14,7 +12,6 @@ Authors: [Wenxuan Zhang](https://wx-zhang.github.io), [Philip Torr](https://www.
   <img src="assets/bfpo.gif" width="50%">
 </p>
 
-This repo contains the implementation for the BFPO framework, as well as the code for the experiments in the paper.
 
 ## 📰 News
 - **(2025-01)**: Our paper is accepted to ICLR 2025 as spotlight presentation! 🎉
