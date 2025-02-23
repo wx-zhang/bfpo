@@ -1,6 +1,6 @@
 # Bi-Factorial Preference Optimization: Balancing Safety-Helpfulness in Language Models
 
-Official PyTorch implementation for our ICLR 2025 spotlight paper:
+
 
 **Bi-Factorial Preference Optimization: Balancing Safety-Helpfulness in Language Models**
 Authors: [Wenxuan Zhang](https://wx-zhang.github.io), [Philip Torr](https://www.robots.ox.ac.uk/~phst/), [Mohamed Elhoseiny*](https://www.mohamed-elhoseiny.com/), [Adel Bibi*](www.adelbibi.com/) (* Equal Advising)
