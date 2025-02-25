@@ -22,7 +22,7 @@ from transformers import AutoModelForCausalLM, set_seed
 
 from alignment import (
     DataArguments,
-    DPOConfig,
+    BFPOConfig,
     H4ArgumentParser,
     ModelArguments,
     apply_chat_template,
@@ -42,7 +42,7 @@ logger = logging.getLogger(__name__)
 
 
 def main():
-    parser = H4ArgumentParser((ModelArguments, DataArguments, DPOConfig))
+    parser = H4ArgumentParser((ModelArguments, DataArguments, BFPOConfig))
     model_args, data_args, training_args = parser.parse()
 
     #######
@@ -93,7 +93,7 @@ def main():
     #####################
     raw_datasets = raw_datasets.map(
         apply_chat_template,
-        fn_kwargs={"tokenizer": tokenizer, "task": "safe_ipo"},
+        fn_kwargs={"tokenizer": tokenizer, "task": "bfpo"},
         num_proc=data_args.preprocessing_num_workers,
         remove_columns=column_names,
         load_from_cache_file=False,
@@ -125,7 +125,7 @@ def main():
         column_names = list(buffer_datasets["train"].features)
         buffer_datasets = buffer_datasets.map(
             apply_chat_template,
-            fn_kwargs={"tokenizer": tokenizer, "task": "safe_ipo"},
+            fn_kwargs={"tokenizer": tokenizer, "task": "bfpo"},
             num_proc=data_args.preprocessing_num_workers,
             remove_columns=column_names,
             load_from_cache_file=False,
@@ -224,7 +224,6 @@ def main():
         max_length=training_args.max_length,
         max_prompt_length=training_args.max_prompt_length,
         peft_config=get_peft_config(model_args),
-        loss_type=training_args.loss_type,
     )
 
     ###############

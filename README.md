@@ -99,16 +99,28 @@ To run the code in this project, first, create a Python virtual environment usin
 conda create -n bfpo python=3.10 && conda activate bfpo
 ```
 Next, install PyTorch `v2.1.2`. We direct you to the [PyTorch Installation Page](https://pytorch.org/get-started/locally/).
+An example of the installation command on Linux with cuda 12.1 is as follows:
+```shell
+conda install pytorch==2.1.2  pytorch-cuda=12.1 -c pytorch -c nvidia
+```
+
+
 
 You can then install the remaining package dependencies as follows:
 
 ```shell
 git clone https://github.com/wx-zhang/bfpo.git
 cd ./bfpo
-python -m pip install .
+
+
+
+# install the required packages for BFPO
+pip install -e .
+pip install flash-attn==2.3.6 --no-build-isolation 
+
 ```
 
-### Training and Evaluation
+### Training 
 
 To reproduce the alignment results, use the following command to run the training and evaluation :
 
@@ -122,6 +134,40 @@ To reproduce the red teaming results, use the following command:
 bash redteaming.sh
 ```
 This file includes the BFPO training based on `HuggingFaceH4/zephyr-7b-beta` and evaluation.
+
+### Evaluation 
+
+It is suggested to install a separate environment for the evaluation. 
+```shell
+git clone --depth 1 https://github.com/EleutherAI/lm-evaluation-harness
+cd lm-evaluation-harness
+pip install -e .  
+```
+
+To evaluate the model, use the following command:
+```shell
+lm_eval --model hf \
+    --model_args "pretrained=/path/to/your/model,dtype=bfloat16" \
+    --tasks truthfulqa_gen,truthfulqa_mc2,crows_pairs_english,ethics_cm,ethics_justice,ethics_deontology,ethics_utilitarianism,ethics_virtue,toxigen,winogrande,bigbench_hhh_alignment_multiple_choice,bigbench_fact_checker_multiple_choice,bigbench_moral_permissibility_multiple_choice,bigbench_bbq_lite_json_multiple_choice,bigbench_known_unknowns_multiple_choice,bigbench_simple_ethical_questions_multiple_choice,realtoxicityprompts_challenge,hhh_alignment \
+    --include_path ./data/eval-tasks/ \
+    --batch_size 32 \
+    --max_batch_size 1024 \
+    --output_path /path/to/output/results \
+    --write_out False \
+    --trust_remote_code True
+
+
+
+lm_eval --model hf \
+    --model_args "pretrained=/path/to/your/model,apply_template=True,is_chat_model=True,dtype=bfloat16" \
+    --tasks tasks=advbench,alert,alert_adversarial \
+    --include_path ./data/eval-tasks/ \
+    --batch_size 32 \
+    --max_batch_size 1024 \
+    --output_path /path/to/output/results \
+    --write_out False \
+    --trust_remote_code True
+``` 
 
 
 ****Note:**** We plug in the evaluation code from the 0.4.1 version of [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness/tree/fb963f0f0a5b28b69763590bb59676072cf43a01) to evaluate the models.

@@ -1,3 +1,0 @@
-model: hf
-model_name: HuggingFaceH4/zephyr-7b-beta
-model_args: "pretrained=${model_name},apply_template=True,is_chat_model=True,dtype=bfloat16"

@@ -39,7 +39,7 @@ if stale_egg_info.exists():
 # IMPORTANT: all dependencies should be listed here with their version requirements, if any.
 #   * If a dependency is fast-moving (e.g. transformers), pin to the exact version
 _deps = [
-    "accelerate==0.23.0",
+    "accelerate==0.26.0",
     "bitsandbytes==0.42.0",
     "black==23.1.0",
     "datasets==2.14.6",
@@ -52,7 +52,7 @@ _deps = [
     "huggingface-hub>=0.19.2,<1.0",
     "isort>=5.12.0",
     "ninja>=1.11.1",
-    "numpy>=1.24.2",
+    "numpy==1.24.2",
     "packaging>=23.0",
     "parameterized>=0.9.0",
     "peft==0.7.1",
@@ -66,6 +66,8 @@ _deps = [
     "trl==0.7.7",
     "jinja2>=3.0.0",
     "tqdm>=4.64.1",
+    "hydra-core",
+    "wandb",
 ]
 
 # this is a lookup table with items like:
@@ -109,6 +111,8 @@ install_requires = [
     deps["tqdm"],  # progress bars in model download and training scripts
     deps["transformers"],
     deps["trl"],
+    deps["hydra-core"],
+    deps["wandb"],
 ]
 
 setup(
