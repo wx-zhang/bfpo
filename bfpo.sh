@@ -23,7 +23,6 @@ scripts/run_bfpo.py recipes/zephyr-7b-beta/bfpo/selective.yaml \
 --output_dir=./models/bfpo-selective \
 --model_name_or_path=./models/sft-selective \
 --other_data_config=recipes/zephyr-7b-beta/data/balance_bfpo.yaml \
---hub_model_id=dpo-selective-buffer-spo-shift \
 --use_selective=True \
 --remove_unused_columns=False
 
